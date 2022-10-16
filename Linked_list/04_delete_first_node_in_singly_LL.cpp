@@ -47,7 +47,7 @@ int main()
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
 
-   head= delhead(head);
+   head=delhead(head);
    printlist(head);
     return 0;
 }
