@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    //we simply insilize array
+    // we simply insilize array
     int n=6;
     int arr[n]={1,2,3,4,5,6};
 
@@ -13,5 +13,6 @@ int main()
         cout<<arr[i]<<" ";
     }
  
+
     return 0;
 }
