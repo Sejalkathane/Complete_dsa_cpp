@@ -15,8 +15,12 @@ struct Node
 
 Node *insertBegin(Node *head, int x)
 {
-    Node *temp = new Node(x);
-    temp->next = head;
+    // Node *temp = new Node(x);
+    // temp->next = head;
+    // return temp;
+
+    Node *temp=new Node(x);
+    temp->next=head;
     return temp;
 }
 

@@ -5,7 +5,7 @@ struct Node
 {
     int data;
     Node *prev;
-    Node *next;
+    Node *next; 
 
     Node(int d)
     {
@@ -17,6 +17,7 @@ struct Node
 
 void printlist(Node *head)
 {
+
     Node *curr = head;
     while (curr != NULL)
     {
@@ -27,12 +28,23 @@ void printlist(Node *head)
 
 Node *insertbegin(Node *head, int data)
 {
-    Node *temp = new Node(data);
-    temp->next = head;
 
-    if (head != NULL)
-        head->prev = temp;
-    return temp;
+  Node *temp=new Node(data);
+  temp->next=head;
+
+  if(head!=NULL)
+     head->prev=temp;
+
+return temp;
+
+
+
+    // Node *temp = new Node(data);
+    // temp->next = head;
+
+    // if (head != NULL)
+    //     head->prev = temp;
+    // return temp;
 }
 
 int main()
