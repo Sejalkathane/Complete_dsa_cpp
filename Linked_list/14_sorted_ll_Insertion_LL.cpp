@@ -15,6 +15,7 @@ struct Node
 
 Node *sortInsert(Node *head, int x)
 {
+
     Node *temp = new Node(x);
 
     if (head == NULL)
@@ -29,6 +30,7 @@ Node *sortInsert(Node *head, int x)
     }
 
     Node *curr = head;
+
     while (curr->next != NULL && curr->next->data < x)
     {
         curr = curr->next;
@@ -39,7 +41,6 @@ Node *sortInsert(Node *head, int x)
     return head;
 }
 
-
 void printlist(Node *head)
 {
     Node *curr = head;
@@ -49,7 +50,6 @@ void printlist(Node *head)
         curr = curr->next;
     }
 }
-
 
 int main()
 {
