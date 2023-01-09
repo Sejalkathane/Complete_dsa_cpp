@@ -1,11 +1,11 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node
 {
     int data;
     Node *prev;
-    Node *next; 
+    Node *next;
 
     Node(int d)
     {
@@ -14,7 +14,6 @@ struct Node
         next = NULL;
     }
 };
-
 
 void printlist(Node *head)
 {
@@ -27,25 +26,30 @@ void printlist(Node *head)
     }
 }
 
-Node *delHead(Node *head)
+Node *delEnd(Node *head)
 {
-    if(head==NULL)
-      return NULL;
-    
-    if(head->next==NULL)
+    if (head == NULL)
+        return NULL;
+
+    if (head->next == NULL)
     {
         delete head;
         return NULL;
     }
-    else
-   {
-     Node *temp=head;
-     head=head->next;
-     head->prev=NULL;
-     delete temp;
-     return head;
-     
-    }
+
+    Node *curr = head;
+
+    while (curr->next!=NULL)
+        curr=curr->next;
+    curr->prev->next=NULL;
+    delete curr;
+    return head;
+
+    // while(curr->next!=NULL)
+    //       curr=curr->next;
+    // curr->prev->next=NULL;
+    // delete curr;
+    // return head;
 }
 
 int main()
@@ -58,7 +62,7 @@ int main()
     temp1->next = temp2;
     temp2->prev = temp1;
     // head = delHead(head, 34);
-    head = delHead(head);
+    head = delEnd(head);
     printlist(head);
     return 0;
 }
